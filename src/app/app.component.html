@@ -1,0 +1,10 @@
+
+<div class="wrapper">
+  <router-outlet></router-outlet>
+  <app-footer *ngIf="showFooter"></app-footer>
+  <!-- Scroll to top button -->
+  <div class="scrolltotop icon-lg">
+    <a class="button-circle button-circle-md button-circle-dark" *ngIf="showBackToTop" (click)="scrollToTop()"><i class="bi bi-arrow-up-short"></i></a>
+  </div>
+  <!-- end Scroll to top button -->
+</div>

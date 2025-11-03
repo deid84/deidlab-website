@@ -1,0 +1,45 @@
+<app-header></app-header>
+
+<!-- Page title section -->
+<div class="section-xl bg-overlay bg-image parallax" style="background-image: url('assets/images/backgrounds/title-bg-1.jpg')">
+    <div class="bg-dark-05">
+        <div class="container text-center z-index-1">
+            <h1 class="fw-bold uppercase letter-spacing-1 m-0">Blog Grid</h1>
+        </div><!-- end container -->
+    </div>
+</div>
+<!-- end Page title section -->
+
+<!-- Blog Posts -->
+<div class="section">
+  <div class="container">
+    <div class="row column-3 spacing-3">
+      <div class="col-12 col-md-4 col-sm-4 col-lg-4 col-xl-4 mrb-30" *ngFor="let post of blogPosts">
+        <div class="hoverbox-6 mb-3">
+          <a [routerLink]="post.link">
+            <img [src]="post.img" [alt]="post.title">
+            <div class="content top bg-dark">
+              <span class="font-family-poppins font-small fw-normal uppercase text-white">{{ post.date }}</span>
+            </div>
+          </a>
+        </div>
+        <h5 class="fw-medium">
+          <a class="text-link-1 text-color-theme" [routerLink]="post.link">{{ post.title }}</a>
+        </h5>
+        <p>{{ post.excerpt }}</p>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <nav>
+      <ul class="pagination justify-content-center mt-5">
+        <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- end Blog Posts -->

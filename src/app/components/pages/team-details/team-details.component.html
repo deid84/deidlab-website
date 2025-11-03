@@ -1,0 +1,87 @@
+<app-header></app-header>
+
+<!-- Page title section -->
+<div class="section-xl bg-overlay bg-image parallax" style="background-image: url('assets/images/backgrounds/title-bg-1.jpg')">
+    <div class="bg-dark-05">
+        <div class="container text-center z-index-1">
+            <h1 class="fw-bold uppercase letter-spacing-1 m-0">Team Details</h1>
+        </div><!-- end container -->
+    </div>
+</div>
+<!-- end Page title section -->
+
+<!-- Team Detail section -->
+<div class="section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-12 col-lg-4">
+                <img class="border-radius" src="assets/images/team/team-1.jpg" alt="team-1">
+            </div>
+            <div class="col-12 col-lg-8">
+                <div class="d-inline-block bg-gray px-3 py-2 border-radius mb-2">
+                    <h6 class="font-small fw-medium uppercase line-height-140 m-0 color-primary">UI/UX Designer</h6>
+                </div>
+                <h3>Hey, This is Bryan Matt</h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+                <div class="row g-4 mt-4">
+                    <div *ngFor="let skill of skills" class="col-12 col-lg-6">
+                        <div class="progress-box progress-orange">
+                            <h6 class="font-small uppercase fw-medium">{{ skill.name }}</h6>
+                            <div class="animated-progress">
+                                <div [style.width]="skill.level + '%'" [attr.aria-valuenow]="skill.level" aria-valuemin="0" aria-valuemax="100"><span>{{ skill.level }}</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end row(inner) -->
+            </div>
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div>
+<!-- end Team Detail section -->
+
+<div class="section-xl bg-image parallax" style="background-image: url('assets/images/backgrounds/main-bg-2.jpg')">
+    <div class="bg-dark-06">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <h1 class="fw-light m-0">Andor Studio Multipurpose HTML5 Template</h1>
+                </div>
+                <div class="col-12 col-lg-6 text-lg-end">
+                    <a class="button button-xl button-radius button-white-2" routerLink="/contact">Contact Us</a>
+                </div>
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div>
+</div>
+
+<!-- Services section -->
+<div class="section">
+    <div class="container">
+        <div class="row icon-4xl">
+            <div class="col-12 col-lg-4" *ngFor="let item of iconStore">
+                <i [class]="item.icon + ' color-primary'"></i>
+                <h5 class="fw-semi-bold mt-2">{{ item.title }}</h5>
+                <p>{{ item.description }}</p>
+            </div>
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div>
+<!-- end Services section -->
+
+<!-- Timeline section -->
+<div class="section border-top">
+    <div class="container">
+        <div class="timeline-wrapper timeline-left">
+            <div class="timeline" *ngFor="let item of timelineStore">
+                <div class="timeline-date">
+                    <h6 class="font-small fw-normal uppercase">{{ item.date }}</h6>
+                    </div>
+                    <div class="timeline-content">
+                    <h5 class="fw-medium">{{ item.title }}</h5>
+                    <p>{{ item.description }}</p>
+                </div>
+            </div>
+        </div><!-- end timeline-wrapper -->
+    </div><!-- end container -->
+</div>
+<!-- end Timeline section -->

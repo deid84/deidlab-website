@@ -1,0 +1,50 @@
+<div class="section bg-dark">
+  <div class="container">
+    <div class="row g-4 g-lg-5">
+      
+      <!-- Logo and Copy -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <h1 class="display-5 mb-2">Andor</h1>
+        <p>&copy; 2025 Andor, All Rights Reserved.</p>
+      </div>
+
+      <!-- Contact Info and Social Links -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <!-- Contact Info -->
+        <ul class="list-unstyled">
+          <li>+(1) 123 456 78</li>
+          <li>contact&#64;yoursite.com</li>
+          <li>380 St Kilda Road, Sydeny VIC 3004, Australia</li>
+        </ul>
+
+        <!-- Social Links -->
+        <ul class="list-inline-sm mt-4">
+          <li *ngFor="let social of socialLinks">
+            <a class="button-circle button-circle-sm button-circle-white-2" routerLink="/">
+              <i [class]="social.icon"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Footer Menu 1 -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <ul class="list-dash">
+          <li *ngFor="let link of footerMenu1">
+            <a [routerLink]="link.url">{{ link.label }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Footer Menu 2 -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <ul class="list-dash">
+          <li *ngFor="let link of footerMenu2">
+            <a [routerLink]="link.url">{{ link.label }}</a>
+          </li>
+        </ul>
+      </div>
+
+    </div><!-- end row -->
+  </div><!-- end container -->
+</div><!-- end section -->

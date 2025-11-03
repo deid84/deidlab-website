@@ -1,0 +1,114 @@
+<app-header></app-header>
+
+<!-- Page title section -->
+<div class="section-xl bg-overlay bg-image parallax" style="background-image: url('assets/images/backgrounds/title-bg-1.jpg')">
+    <div class="bg-dark-05">
+        <div class="container text-center z-index-1">
+            <h1 class="fw-bold uppercase letter-spacing-1 m-0">About Us</h1>
+        </div><!-- end container -->
+    </div>
+</div>
+<!-- end Page title section -->
+
+<!-- About section -->
+<div class="section">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-12 col-lg-6">
+                <div class="row g-4">
+                    <div class="col-12">
+                        <a class="lightbox-media-box border-radius-1 box-shadow icon-xl" (click)="openPopup()">
+                            <img src="assets/images/about/about-img-4.jpg" alt="about-2">
+                            <i class="bi bi-play"></i>
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <img class="border-radius-1 box-shadow" src="assets/images/about/about-img-5.jpg" alt="about-5">
+                    </div>
+                    <div class="col-6">
+                        <img class="border-radius-1 box-shadow" src="assets/images/about/about-img-6.jpg" alt="about-6">
+                    </div>
+                </div><!-- end row(inner) -->
+            </div>
+            <div class="col-12 col-lg-6">
+                <h2 class="fw-normal mb-3">Designing the Future, Together.</h2>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Cum
+                    sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                <div class="row g-4 mt-2">
+                    <!-- Progress bar 1 -->
+                    <div *ngFor="let skill of skills" class="col-12 col-sm-6">
+                        <div class="progress-box">
+                            <h6 class="font-small uppercase fw-medium">{{ skill.name }}</h6>
+                            <div class="animated-progress">
+                                <div [style.width]="skill.level + '%'" [attr.aria-valuenow]="skill.level" aria-valuemin="0" aria-valuemax="100"><span>{{ skill.level }}</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end row(inner) -->
+            </div>
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div>
+<!-- end About section -->
+
+<!-- Video Popup -->
+<div class="video-popup" *ngIf="isOpen">
+    <div class="popup-inner">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/_r0vlyp33pw?si=6QvabQvNDeYzXpw9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <button (click)="closePopup()" type="button" class="close-btn">
+            <i class='bi bi-x'></i>
+        </button>
+    </div>
+</div>
+
+<!-- Clients section -->
+<div class="section pt-0">
+    <div class="container">
+        <owl-carousel-o [options]="brandCarouselOptions" class="client-carousel">
+            <ng-template carouselSlide *ngFor="let brand of brands">
+                <div class="client-box">
+                <a routerLink="/">
+                    <img [src]="brand.image" [alt]="brand.alt">
+                </a>
+                </div>
+            </ng-template>
+        </owl-carousel-o><!-- end owl-carousel -->
+    </div><!-- end container -->
+</div>
+<!-- end Clients section -->
+
+<div class="section-xl bg-image parallax" style="background-image: url('assets/images/backgrounds/main-bg-2.jpg')">
+    <div class="bg-dark-06">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <h1 class="fw-light m-0">Andor Studio Multipurpose HTML5 Template</h1>
+                </div>
+                <div class="col-12 col-lg-6 text-lg-end">
+                    <a class="button button-xl button-radius button-white-2" routerLink="/contact">Contact Us</a>
+                </div>
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div>
+</div>
+
+<!-- Services section -->
+<div class="section">
+    <div class="container text-center">
+        <div class="mb-4">
+            <div class="row text-center">
+                <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                    <h2 class="font-family-outfit fw-normal display-6">What We Do</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 g-lg-5 icon-5xl">
+            <div class="col-12 col-lg-4" *ngFor="let item of iconBoxes">
+                <i [class]="item.icon + ' text-dark mt-2'"></i>
+                <h5 class="fw-medium mt-2">{{ item.title }}</h5>
+                <p>{{ item.description }}</p>
+            </div>
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div>
+<!-- end Services section -->

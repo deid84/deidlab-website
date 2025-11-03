@@ -1,0 +1,106 @@
+<app-header></app-header>
+
+<!-- Page title section -->
+<div class="section-xl bg-overlay bg-image parallax" style="background-image: url('assets/images/backgrounds/title-bg-1.jpg')">
+    <div class="bg-dark-05">
+        <div class="container text-center z-index-1">
+            <h1 class="fw-bold uppercase letter-spacing-1 m-0">Porfolio Details</h1>
+        </div><!-- end container -->
+    </div>
+</div>
+<!-- end Page title section -->
+
+<!-- Portfolio section -->
+<div class="section">
+    <div class="container">
+        <div class="row g-4 g-lg-5">
+            <div class="col-12 col-lg-3">
+                <div class="mb-3">
+                    <h6 class="font-small fw-medium uppercase m-0 text-color-theme">Category</h6>
+                    <span>Creative Agency</span>
+                </div>
+                <div class="mb-3">
+                    <h6 class="font-small fw-medium uppercase m-0 text-color-theme">Date</h6>
+                    <span>September 26, 2025</span>
+                </div>
+                <div>
+                    <h6 class="font-small fw-medium uppercase m-0 text-color-theme">Industry</h6>
+                    <span>Branding, UX Design</span>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
+                    massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
+                    quam felis, ultricies nec, pellentesque eu, pretium quis, sem. <br> Nulla consequat massa quis enim.
+                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+                    imperdiet a, venenatis vitae, justo. Integer tincidunt.</p>
+            </div>
+            <div class="col-12 col-lg-3">
+                <div class="mb-3">
+                    <h6 class="font-small fw-medium uppercase m-0 text-color-theme">Client</h6>
+                    <span>Your Company Name</span>
+                </div>
+                <div class="mb-3">
+                    <h6 class="font-small fw-medium uppercase m-0 text-color-theme">Category</h6>
+                    <span>Branding, Design, Photography</span>
+                </div>
+                <div>
+                    <h6 class="font-small fw-medium uppercase m-0 text-color-theme">Project Link</h6>
+                    <a class="text-link-2" href="#">www.yoursite.com</a>
+                </div>
+            </div>
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div>
+<!-- end Portfolio section -->
+
+<!-- Clients section -->
+<div class="section-sm pt-0">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-12 col-lg-5 col-xxl-4">
+                <div class="d-flex align-items-center">
+                    <ul class="avatar-group">
+                        <li>
+                            <img src="assets/images/testimonials/client-1-sm.jpg" alt="client-01">
+                        </li>
+                        <li>
+                            <img src="assets/images/testimonials/client-2-sm.jpg" alt="client-02">
+                        </li>
+                        <li>
+                            <img src="assets/images/testimonials/client-3-sm.jpg" alt="client-03">
+                        </li>
+                    </ul>
+                    <div class="d-inline-block ps-3">
+                        <p>We've over 4,000 clients <br class="d-md-block">around the world</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-7 col-xxl-8">
+                <owl-carousel-o [options]="brandsCarousel" class="owl-btn-center-lr brands-carousel">
+                    <ng-template carouselSlide *ngFor="let brand of brandStore">
+                        <div class="client-box">
+                            <a href="#."><img src="assets/images/brands/{{brand.img}}" alt="brand-img"></a>
+                        </div>
+                    </ng-template>
+                </owl-carousel-o>
+            </div>
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div>
+<!-- end Clients section -->
+
+<div class="section-xl bg-image parallax" style="background-image: url('assets/images/backgrounds/main-bg-2.jpg')">
+    <div class="bg-dark-06">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <h1 class="fw-light m-0">Andor Studio Multipurpose HTML5 Template</h1>
+                </div>
+                <div class="col-12 col-lg-6 text-lg-end">
+                    <a class="button button-xl button-radius button-white-2" routerLink="/contact">Contact Us</a>
+                </div>
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div>
+</div>

@@ -1,0 +1,372 @@
+<!-- Header -->
+<div class="header center">
+  <div class="container">
+    <div class="header-logo">
+      <h3 class="uppercase letter-spacing-1">
+        <a routerLink="/">Andor</a>
+      </h3>
+    </div>
+
+    <!-- Menu -->
+    <div class="header-menu" [ngClass]="{ 'show': isMenuOpen }">
+      <ul class="nav">
+        <!-- Dropdown Item -->
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{ 'd-toggle': true }" href="javascript:void(0)" (click)="toggleDropdown(0)">Home</a>
+          <ul class="nav-dropdown" [ngClass]="{ 'show': isMenuOpen && activeDropdown === 0 }">
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/">Creative Agency</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/home-two">Digital Studio</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/home-three">Corporate Business</a></li>
+          </ul>
+          <!-- Toggle Link Icon -->
+          <a href="javascript:void(0)" class="nav-dropdown-toggle" [ngClass]="{ 'active': isMenuOpen && activeDropdown === 0 }" (click)="toggleDropdown(0)"></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{ 'd-toggle': true }" href="javascript:void(0)" (click)="toggleDropdown(1)">Pages</a>
+          <ul class="nav-dropdown" [ngClass]="{ 'show': isMenuOpen && activeDropdown === 1 }">
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/about-us">About Us</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/our-team">Our Team</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/team-details">Team Details</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/testimonials">Testimonials</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/pricing-table">Pricing Table</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/404-page">404 Error Page</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/coming-soon">Coming Soon</a></li>
+          </ul>
+          <!-- Toggle Link Icon -->
+          <a href="javascript:void(0)" class="nav-dropdown-toggle" [ngClass]="{ 'active': isMenuOpen && activeDropdown === 1 }" (click)="toggleDropdown(1)"></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{ 'd-toggle': true }" href="javascript:void(0)" (click)="toggleDropdown(2)">Services</a>
+          <ul class="nav-dropdown" [ngClass]="{ 'show': isMenuOpen && activeDropdown === 2 }">
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/services">Services</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/service-two">Service Two</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/service-three">Service Three</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/service-four">Service Four</a></li>
+          </ul>
+          <!-- Toggle Link Icon -->
+          <a href="javascript:void(0)" class="nav-dropdown-toggle" [ngClass]="{ 'active': isMenuOpen && activeDropdown === 2 }" (click)="toggleDropdown(2)"></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{ 'd-toggle': true }" href="javascript:void(0)" (click)="toggleDropdown(3)">Portfolio</a>
+          <ul class="nav-dropdown" [ngClass]="{ 'show': isMenuOpen && activeDropdown === 3 }">
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/portfolio-two-column">Portfolio Two Columns</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/portfolio-three-column">Portfolio Three Columns</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/portfolio-four-column">Portfolio Four Columns</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/portfolio-detail">Portfolio Details</a></li>
+          </ul>
+          <!-- Toggle Link Icon -->
+          <a href="javascript:void(0)" class="nav-dropdown-toggle" [ngClass]="{ 'active': isMenuOpen && activeDropdown === 3 }" (click)="toggleDropdown(3)"></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{ 'd-toggle': true }" href="javascript:void(0)" (click)="toggleDropdown(4)">Blogs</a>
+          <ul class="nav-dropdown" [ngClass]="{ 'show': isMenuOpen && activeDropdown === 4 }">
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/blog-grid">Blog Grid</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/blog-standard">Blog Standard</a></li>
+          </ul>
+          <!-- Toggle Link Icon -->
+          <a href="javascript:void(0)" class="nav-dropdown-toggle" [ngClass]="{ 'active': isMenuOpen && activeDropdown === 4 }" (click)="toggleDropdown(4)"></a>
+        </li>
+
+        <li class="nav-item" (click)="closeMenu()">
+          <a class="nav-link" routerLink="/contact">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="header-menu-extra">
+      <ul class="list-inline-sm">
+        <li><a href="/"><i class="bi bi-facebook"></i></a></li>
+        <li><a href="/"><i class="bi bi-twitter-x"></i></a></li>
+        <li><a href="/"><i class="bi bi-linkedin"></i></a></li>
+      </ul>
+    </div>
+
+    <!-- Menu Toggle -->
+    <button class="header-toggle" [class.toggle-close]="isMenuOpen" (click)="toggleMenu()">
+      <span></span>
+    </button>
+  </div>
+</div>
+<!-- end Header -->
+
+<!-- Hero section -->
+<div class="px-4 px-lg-5">
+    <div class="section-xl bg-dark-01 bg-overlay position-relative border-radius-1">
+        <!-- Background Video -->
+        <div class="bg-video">
+            <video playsinline autoplay muted loop>
+                <source src="assets/videos/home-video-1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <!-- end Background Video -->
+        <div class="container text-center z-index-1">
+            <div class="position-middle">
+                <div class="row">
+                    <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                        <h5 class="fw-normal mb-3 text-white">Design. Develop. Deliver.</h5>
+                        <h1 class="display-2 fw-medium mb-0 font-family-playfair font-italic">We Are the Team Behind
+                            Your Success.</h1>
+                    </div>
+                </div><!-- end row -->
+            </div>
+            <!-- smoothscroll button -->
+            <div class="position-bottom">
+                <a class="button-circle button-circle-lg button-circle-white-2 icon-lg" href="#service">
+                    <i class="bi bi-arrow-down"></i>
+                </a>
+            </div>
+        </div><!-- end container -->
+    </div>
+</div>
+<!-- end Hero section -->
+
+<!-- Services section -->
+<div class="container text-center n-margin-5" id="service">
+    <div class="row g-4 icon-5xl">
+        <div class="col-12 col-lg-4" *ngFor="let service of services">
+            <div class="bg-white box-shadow border-radius p-4 p-lg-5">
+                <i [class]="service.icon + ' text-gradient-1'"></i>
+                <h4 class="font-family-playfair font-italic fw-medium mt-2">{{ service.title }}</h4>
+                <p>{{ service.description }}</p>
+            </div>
+        </div>
+    </div><!-- end row -->
+</div><!-- end container -->
+<!-- end Services section -->
+
+<!-- About section -->
+<div class="section">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-12 col-lg-5">
+                <h6 class="font-small uppercase letter-spacing-1 mb-3 text-gradient-1">Our Company</h6>
+                <h2 class="fw-semi-bold font-family-playfair font-italic">We integrate strategy, creativity & experience to solve problems</h2>
+                <a class="button button-md button-rounded button-font-2 button-gradient-1 mt-3" routerLink="/contact">Get in Touch</a>
+            </div>
+            <div class="col-12 col-lg-7">
+                <p>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
+                    semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
+                    eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+                <div class="row g-4 mt-2">
+                    <!-- Progress bar -->
+                    <div *ngFor="let skill of skills" class="col-12 col-sm-6">
+                        <div class="progress-box">
+                            <h6 class="fw-medium">{{ skill.name }}</h6>
+                            <div class="animated-progress">
+                                <div class="bg-gradient-1" [style.width]="skill.level + '%'" [attr.aria-valuenow]="skill.level" aria-valuemin="0" aria-valuemax="100"><span>{{ skill.level }}</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end row(inner) -->
+                <!-- Counters -->
+                <div class="row g-4 mt-3">
+                    <!-- Counter -->
+                    <div *ngFor="let fact of funFacts" class="col-4">
+                        <h1 class="fw-semi-bold mb-0">+<span class="counter">{{fact.displayedNumber | number:'1.0-0'}}</span></h1>
+                        <p>{{fact.desc}}</p>
+                    </div>
+                    <!-- end Counter -->
+                </div><!-- end row -->
+                <!-- end Counters -->
+            </div>
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div>
+<!-- end About section -->
+
+<!-- Testimonial section -->
+<div class="container">
+    <div class="bg-gray bg-fade-white-top border-radius-1">
+        <div class="p-4 p-lg-5">
+            <owl-carousel-o [options]="customOptions" class="owl-btn-center-lr testimonial-inner mrt-80">
+                <ng-template carouselSlide *ngFor="let slide of slideStore">
+                    <!-- Testimonial box -->
+                     <div class="testimonial-box">
+                        <img class="mb-3" src="assets/images/testimonials/{{slide.image}}" alt="client-img">
+                        <h5 class="fw-normal line-height-140 m-0">{{slide.title}}</h5>
+                        <span class="font-small fw-normal">{{slide.subtitle}}</span>
+                        <p class="mt-3">{{slide.desc}}</p>
+                     </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
+</div><!-- end container -->
+<!-- end Testimonial section -->
+
+<!-- Clients section -->
+<div class="section">
+    <div class="container">
+        <div class="row gx-5 gy-4 align-items-center">
+            <div class="col-12 col-lg-5">
+                <h6 class="font-small uppercase letter-spacing-1 mb-3 text-gradient-1">Our Statisfy Clients</h6>
+                <h2 class="fw-semi-bold font-family-playfair font-italic">Amazing companies We've worked with in the past 10 years</h2>
+                <a class="button button-md button-rounded button-font-2 button-gradient-1 mt-3" routerLink="/contact">Work With Us</a>
+            </div>
+            <div class="col-12 col-lg-7">
+                <div class="row g-4 g-lg-5">
+                    <div class="col-6 col-sm-6 col-lg-4" *ngFor="let client of clients">
+                        <div class="client-box">
+                            <a routerLink="/contact">
+                                <img [src]="client.img" [alt]="client.alt">
+                            </a>
+                        </div>
+                    </div>
+                </div><!-- end row(inner) -->
+            </div>
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div>
+<!-- end Clients section -->
+
+<!-- Portfolio section -->
+<div class="section pt-0">
+    <div class="container">
+        <div class="row portfolio-grid g-4 g-lg-5 border-radius">
+            <!-- Portfolio box -->
+            <div *ngFor="let work of works" class="col-12 col-md-6 portfolio-item">
+                <div class="portfolio-box">
+                    <div class="portfolio-img">
+                        <img src="assets/images/portfolio/{{work.img}}" alt="gallery-img">
+                    </div>
+                    <a routerLink="/portfolio-two-column"></a>
+                    <div class="portfolio-title">
+                        <div>
+                            <h5 class="fw-normal">{{work.title}}</h5>
+                            <span>{{work.category}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end container -->
+</div>
+<!-- end Portfolio section -->
+
+<!-- Parallax section -->
+<div class="section-xl bg-image bg-overlay-gradient parallax" style="background-image: url('assets/images/backgrounds/parallax-bg.jpg')">
+    <div class="bg-dark-03">
+        <div class="container text-center z-index-1">
+            <div class="row g-4">
+                <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+                    <h2 class="display-4 fw-semi-bold font-family-playfair font-italic">The People Behind the
+                        Progress.</h2>
+                    <p class="mt-4">Our strength lies in our unity diverse minds working together with a shared
+                        purpose to achieve extraordinary results.</p>
+                    <a class="button button-lg button-radius button-rounded button-outline-white mt-4" routerLink="/contact">Call Us</a>
+                </div>
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div>
+</div>
+<!-- end Parallax section -->
+
+<!-- Team section -->
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 text-center">
+                <h6 class="font-small uppercase letter-spacing-1 mb-3 text-gradient-1">Meet Our Team</h6>
+                <h2 class="fw-semi-bold font-family-playfair font-italic">Your goals are our mission, and every
+                    member of our team is here to turn your challenges into achievements.</h2>
+            </div>
+        </div><!-- end row -->
+        <div class="row mt-4 g-4 gy-5 team-wrapper team-box-hover-2 border-radius">
+            <!-- Team box -->
+            <div *ngFor="let team of teams" class="col-12 col-md-6 col-lg-4 team-box">
+                <div class="team-img">
+                    <img src="assets/images/team/{{team.img}}" alt="team-img">
+                    <div>
+                        <ul>
+                            <li *ngFor="let link of socialLinks">
+                                <a [href]="link.url" [class]="link.class">
+                                    <i [class]="link.icon"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <h5 class="fw-normal m-0">{{team.name}}</h5>
+                <span>{{team.designation}}</span>
+            </div>
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div>
+<!-- end Team section -->
+
+<!-- Contact section -->
+<div class="section pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 text-center">
+                <h6 class="font-small uppercase letter-spacing-1 mb-3 text-gradient-1">Contact Us</h6>
+                <h2 class="fw-semi-bold font-family-playfair font-italic">Behind every successful project is a team
+                    that listens, learns, and leads with heart, skill, and determination.</h2>
+            </div>
+        </div><!-- end row -->
+        <div class="row g-4 mt-4">
+            <div class="col-12 col-md-8">
+                <div class="contact-form text-md-end">
+                    <form (submit)="sendEmail($event)" #contactForm="ngForm">
+                        <div class="row gx-3 gy-0">
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group">
+                                    <label class="visually-hidden" for="user_name">Name</label>
+                                    <input type="text" minlength="2" maxlength="15"
+                                        [class.is-invalid]="userName.invalid && userName.touched" name="user_name" id="name"
+                                        placeholder="Name *" [(ngModel)]="formData.user_name" #userName="ngModel" required>
+                                    <div *ngIf="userName.invalid && userName.touched" class="invalid-feedback mrb-10">
+                                        Name is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group">
+                                    <label class="visually-hidden" for="user_email">Email</label>
+                                    <input type="email" minlength="2" maxlength="35"
+                                        [class.is-invalid]="userEmail.invalid && userEmail.touched" name="user_email" class="md-input"
+                                        id="email" placeholder="Email *" [(ngModel)]="formData.user_email" #userEmail="ngModel" required
+                                        email>
+                                    <div *ngIf="userEmail.invalid && userEmail.touched" class="invalid-feedback mrb-10">
+                                        A valid email is required.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="visually-hidden" for="message">Project Details</label>
+                            <textarea name="message" [class.is-invalid]="userMessage.invalid && userMessage.touched" class="md-textarea"
+                                id="message" rows="7" placeholder="Project Details" [(ngModel)]="formData.message" #userMessage="ngModel"
+                                required></textarea>
+                            <div *ngIf="userMessage.invalid && userMessage.touched" class="invalid-feedback mb-10">
+                                Project details are required.
+                            </div>
+                        </div>
+                        <button type="submit" name="submit" class="button button-md button-rounded button-font-2 button-gradient-1 mt-4" [disabled]="contactForm.invalid" value="Send Message">Send Message</button>
+                    </form>
+                    <!-- Submit result -->
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="mb-4">
+                    <h6 class="fw-medium m-0">Phone:</h6>
+                    <p>+61 (03) 9414 7288</p>
+                </div>
+                <div class="mb-4">
+                    <h6 class="fw-medium m-0">Email:</h6>
+                    <p>yoursite&#64;domain.com</p>
+                </div>
+                <div>
+                    <h6 class="fw-medium m-0">Address:</h6>
+                    <p>Patton Street Caulfield East VIC 3145</p>
+                </div>
+            </div>
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div>
+<!-- end Contact section -->

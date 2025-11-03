@@ -1,0 +1,315 @@
+<!-- Header -->
+<div class="header center">
+  <div class="container">
+    <div class="header-logo">
+      <h3 class="uppercase letter-spacing-1">
+        <a routerLink="/">Andor</a>
+      </h3>
+    </div>
+
+    <!-- Menu -->
+    <div class="header-menu" [ngClass]="{ 'show': isMenuOpen }">
+      <ul class="nav">
+        <!-- Dropdown Item -->
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{ 'd-toggle': true }" href="javascript:void(0)" (click)="toggleDropdown(0)">Home</a>
+          <ul class="nav-dropdown" [ngClass]="{ 'show': isMenuOpen && activeDropdown === 0 }">
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/">Creative Agency</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/home-two">Digital Studio</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/home-three">Corporate Business</a></li>
+          </ul>
+          <!-- Toggle Link Icon -->
+          <a href="javascript:void(0)" class="nav-dropdown-toggle" [ngClass]="{ 'active': isMenuOpen && activeDropdown === 0 }" (click)="toggleDropdown(0)"></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{ 'd-toggle': true }" href="javascript:void(0)" (click)="toggleDropdown(1)">Pages</a>
+          <ul class="nav-dropdown" [ngClass]="{ 'show': isMenuOpen && activeDropdown === 1 }">
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/about-us">About Us</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/our-team">Our Team</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/team-details">Team Details</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/testimonials">Testimonials</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/pricing-table">Pricing Table</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/404-page">404 Error Page</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/coming-soon">Coming Soon</a></li>
+          </ul>
+          <!-- Toggle Link Icon -->
+          <a href="javascript:void(0)" class="nav-dropdown-toggle" [ngClass]="{ 'active': isMenuOpen && activeDropdown === 1 }" (click)="toggleDropdown(1)"></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{ 'd-toggle': true }" href="javascript:void(0)" (click)="toggleDropdown(2)">Services</a>
+          <ul class="nav-dropdown" [ngClass]="{ 'show': isMenuOpen && activeDropdown === 2 }">
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/services">Services</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/service-two">Service Two</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/service-three">Service Three</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/service-four">Service Four</a></li>
+          </ul>
+          <!-- Toggle Link Icon -->
+          <a href="javascript:void(0)" class="nav-dropdown-toggle" [ngClass]="{ 'active': isMenuOpen && activeDropdown === 2 }" (click)="toggleDropdown(2)"></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{ 'd-toggle': true }" href="javascript:void(0)" (click)="toggleDropdown(3)">Portfolio</a>
+          <ul class="nav-dropdown" [ngClass]="{ 'show': isMenuOpen && activeDropdown === 3 }">
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/portfolio-two-column">Portfolio Two Columns</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/portfolio-three-column">Portfolio Three Columns</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/portfolio-four-column">Portfolio Four Columns</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/portfolio-detail">Portfolio Details</a></li>
+          </ul>
+          <!-- Toggle Link Icon -->
+          <a href="javascript:void(0)" class="nav-dropdown-toggle" [ngClass]="{ 'active': isMenuOpen && activeDropdown === 3 }" (click)="toggleDropdown(3)"></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{ 'd-toggle': true }" href="javascript:void(0)" (click)="toggleDropdown(4)">Blogs</a>
+          <ul class="nav-dropdown" [ngClass]="{ 'show': isMenuOpen && activeDropdown === 4 }">
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/blog-grid">Blog Grid</a></li>
+            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/blog-standard">Blog Standard</a></li>
+          </ul>
+          <!-- Toggle Link Icon -->
+          <a href="javascript:void(0)" class="nav-dropdown-toggle" [ngClass]="{ 'active': isMenuOpen && activeDropdown === 4 }" (click)="toggleDropdown(4)"></a>
+        </li>
+
+        <li class="nav-item" (click)="closeMenu()">
+          <a class="nav-link" routerLink="/contact">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="header-menu-extra">
+      <ul class="list-inline-sm">
+        <li><a href="/"><i class="bi bi-facebook"></i></a></li>
+        <li><a href="/"><i class="bi bi-twitter-x"></i></a></li>
+        <li><a href="/"><i class="bi bi-linkedin"></i></a></li>
+      </ul>
+    </div>
+
+    <!-- Menu Toggle -->
+    <button class="header-toggle" [class.toggle-close]="isMenuOpen" (click)="toggleMenu()">
+      <span></span>
+    </button>
+  </div>
+</div>
+<!-- end Header -->
+
+<!-- Hero section -->
+<div class="section-lg bg-image parallax" style="background-image: url('assets/images/backgrounds/main-bg-1.jpg')">
+  <div class="bg-dark-08">
+    <div class="container">
+      <div class="row mt-5 mb-5">
+        <div class="col-12 col-md-10 offset-md-1">
+          <h1 class="display-3 font-family-outfit fw-semi-bold m-0">Fueling Innovation &amp;<br>Through Design.</h1>
+          <div class="d-flex align-items-center mt-4">
+            <ul class="avatar-group">
+              <li>
+                <img src="assets/images/testimonials/client-1-sm.jpg" alt="01">
+              </li>
+              <li>
+                <img src="assets/images/testimonials/client-2-sm.jpg" alt="02">
+              </li>
+              <li>
+                <img src="assets/images/testimonials/client-3-sm.jpg" alt="03">
+              </li>
+            </ul>
+            <div class="d-inline-block ps-3">
+              <p>Trusted by 4,000+ people <br class="d-md-block">around the world</p>
+            </div>
+          </div>
+        </div>
+      </div><!-- end row -->
+    </div><!-- end container -->
+  </div>
+</div>
+<!-- end Hero section -->	
+
+<!-- Services section -->
+<div class="border-top border-bottom">
+  <div class="container">
+    <div class="row icon-5xl g-0">
+      <div class="col-12 col-lg-4" *ngFor="let service of services">
+        <div class="d-flex p-4 py-lg-5 px-xl-5 hover-shadow">
+          <div class="d-inline-block me-4">
+            <i class="bi {{ service.icon }} color-black"></i>
+          </div>
+          <div class="d-inline-block">
+            <h5 class="fw-normal">{{ service.title }}</h5>
+            <p>{{ service.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- end row -->
+  </div><!-- end container -->
+</div>
+<!-- end Services section -->
+
+<!-- Team section -->
+<div class="section">
+  <div class="container">
+    <div class="mb-5">
+      <div class="col-12 col-lg-10 offset-lg-1">
+        <div class="row g-1 gx-xl-4 align-items-center" data-cues="fadeIn">
+          <div class="col-12 col-xl-6 col-xxl-5">
+            <h2 class="display-4 fw-normal">Meet Our <span class="fw-bold">Creative Team</span></h2>
+          </div>
+          <div class="col-12 col-xl-6 col-xxl-7">
+            <p>We help startups, brands, and businesses stand out in a crowded world.</p>
+            <a class="button button-md button-reveal-right-outline-dark button-rounded mt-3" routerLink="/about-us"><i class="bi bi-arrow-right"></i><span>More About us</span></a>
+          </div>
+        </div><!-- end row -->
+      </div>
+    </div>
+    <div class="row team-wrapper border-radius gx-3 gy-4">
+      <div class="col-12 col-sm-6 col-lg-3 team-box" *ngFor="let member of teamMembers">
+        <div class="team-img">
+          <img [src]="member.image" [alt]="member.name">
+          <div>
+            <ul>
+              <li *ngFor="let social of member.socials">
+                <a [href]="social.url"><i class="bi {{ social.icon }}"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mb-2">
+          <h5 class="fw-normal m-0 color-black">{{ member.name }}</h5>
+          <span>{{ member.role }}</span>
+        </div>
+      </div>
+    </div><!-- end row -->
+  </div><!-- end container -->
+</div>
+<!-- end Team section -->
+
+<!-- Portfolio section -->
+<div class="section border-top">
+    <div class="container">
+        <div class="mb-5">
+					<div class="row">
+						<div class="col-12 col-lg-10 offset-lg-1">
+							<div class="row g-1 gx-xl-4 align-items-center" data-cues="fadeIn">
+								<div class="col-12 col-xl-6 col-xxl-5">
+									<h2 class="display-4 fw-normal">Our Creative <span class="fw-bold">Recent Works</span></h2>
+								</div>
+								<div class="col-12 col-xl-6 col-xxl-7">
+									<p>Driven by passion, powered by innovation delivering experiences that matter.</p>
+									<a class="button button-md button-reveal-right-outline-dark button-rounded mt-3" href="portfolio-digital.html"><i class="bi bi-arrow-right"></i><span>View all works</span></a>
+								</div>
+							</div><!-- end row -->
+						</div>
+					</div>
+				</div>
+        <div class="row portfolio-grid g-4 g-lg-5 border-radius">
+            <!-- Portfolio box -->
+            <div *ngFor="let work of works" class="col-12 col-md-6 portfolio-item">
+                <div class="portfolio-box">
+                    <div class="portfolio-img">
+                        <img src="assets/images/portfolio/{{work.img}}" alt="gallery-img">
+                    </div>
+                    <a routerLink="/portfolio-two-column"></a>
+                    <div class="portfolio-title">
+                        <div>
+                            <h5 class="fw-normal">{{work.title}}</h5>
+                            <span>{{work.category}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end container -->
+</div>
+<!-- end Portfolio section -->
+
+<!-- Parallax section -->
+<div class="section-xl bg-image parallax" style="background-image: url('assets/images/backgrounds/parallax-bg.jpg')">
+  <div class="bg-dark-03">
+    <div class="container text-center">
+      <div class="row g-4">
+        <div class="col-12 col-sm-10 offset-sm-1 col-md-7 offset-md-1 col-lg-8 offset-lg-2">
+          <h2 class="display-4 fw-normal"> For Startups <span class="fw-bold">& Innovators</span> </h2>
+          <p>We are a full-service creative agency that blends bold ideas with smart design and digital innovation. Whether you're launching a brand, revamping your website.</p>
+          <a class="button button-lg button-rounded button-font-2 button-white button-shadow button-hover-float mt-4" href="contact.html">Contact Us</a>
+        </div>
+      </div><!-- end row -->
+    </div><!-- end container -->
+  </div>
+</div>
+<!-- end Parallax section -->
+
+<!-- Blog section -->
+<div class="section">
+  <div class="container">
+    <div class="mb-5">
+      <div class="row">
+        <div class="col-12 col-lg-10 offset-lg-1">
+          <div class="row g-1 gx-xl-4 align-items-center">
+            <div class="col-12 col-xl-6 col-xxl-5">
+              <h2 class="display-4 fw-normal">Our Recent <span class="fw-bold">Blog Posts</span></h2>
+            </div>
+            <div class="col-12 col-xl-6 col-xxl-7">
+              <p>Let's make something amazing together bold designs, powerful stories, unforgettable brands.</p>
+              <a class="button button-md button-reveal-right-outline-dark button-rounded mt-3" routerLink="/blog-grid"><i class="bi bi-arrow-right"></i><span>View all posts</span></a>
+            </div>
+          </div><!-- end row -->
+        </div>
+      </div>
+    </div>
+    <owl-carousel-o [options]="customOptions">
+      <ng-container *ngFor="let blog of blogItems">
+        <ng-template carouselSlide>
+          <div>
+            <div class="hoverbox-6 border-radius">
+              <a [routerLink]="blog.link">
+                <img [src]="blog.image" [alt]="blog.alt">
+                <div class="content top bg-dark border-radius">
+                  <span class="font-family-poppins font-small fw-normal uppercase m-0 text-white">
+                    {{ blog.category }}
+                  </span>
+                </div>
+              </a>
+            </div>
+            <div class="p-3">
+              <h5 class="fw-normal m-0">
+                <a class="text-link-1" [routerLink]="blog.link">{{ blog.title }}</a>
+              </h5>
+              <span>{{ blog.date }}</span>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o><!-- end owl-carousel -->
+  </div><!-- end container -->
+</div>
+<!-- end Blog section -->
+
+<footer>
+  <div class="section-sm bg-dark">
+    <div class="container">
+      <div class="row align-items-center g-2">
+
+        <!-- Logo / Name -->
+        <div class="col-12 col-md-4 order-md-2 text-center">
+          <h3 class="uppercase letter-spacing-1 m-0">Andor</h3>
+        </div>
+
+        <!-- Social Links -->
+        <div class="col-12 col-md-4 order-md-3 text-center text-md-end">
+          <ul class="list-inline-sm">
+            <li *ngFor="let social of socialLinks">
+              <a class="button-circle button-circle-sm {{ social.class }}" routerLink="/">
+                <i class="bi {{ social.icon }}"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Copyright -->
+        <div class="col-12 col-md-4 order-md-1 text-center text-md-start">
+          <p>&copy; 2025 Andor, All Rights Reserved.</p>
+        </div>
+      </div><!-- end row -->
+    </div><!-- end container -->
+  </div>
+</footer>
+<!-- end Footer -->
