@@ -17,7 +17,7 @@ export class AppComponent {
         const path = event.urlAfterRedirects.split('?')[0];
 
         // Hide footer on specific routes
-        const hiddenRoutes = ['/error', '/home-two', '/home-three', '/coming-soon'];
+        const hiddenRoutes = ['/error', '/home-one', '/home-three', '/coming-soon'];
         this.showFooter = !hiddenRoutes.includes(path);
 
         // Scroll to top (after DOM render)

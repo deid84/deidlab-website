@@ -135,7 +135,7 @@ export class HomeTwoComponent {
     { name: 'instagram', icon: 'instagram' }
   ];
 
-  //Blogs 
+  //Blogs
   blogItems = [
     {
       image: 'assets/images/blogs/blog-md-1.jpg',
@@ -143,7 +143,7 @@ export class HomeTwoComponent {
       category: 'Branding',
       title: "It's Like Dating Entertainment",
       date: 'Apr 29, 2025',
-      link: '/blog-grid', 
+      link: '/blog-grid',
     },
     {
       image: 'assets/images/blogs/blog-md-2.jpg',
@@ -185,11 +185,4 @@ export class HomeTwoComponent {
       1200: { items: 3 },
     },
   };
-
-  socialLinks = [
-    { icon: 'bi-facebook', class: 'button-circle-social-facebook'},
-    { icon: 'bi-twitter-x', class: 'button-circle-social-twitter'},
-    { icon: 'bi-linkedin', class: 'button-circle-social-linkedin'},
-    { icon: 'bi-instagram', class: 'button-circle-social-instagram'},
-  ];
 }

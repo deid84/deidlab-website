@@ -23,8 +23,8 @@ import { BlogStandardComponent } from './components/pages/blog-standard/blog-sta
 import { ContactComponent } from './components/pages/contact/contact.component';
 
 const routes: Routes = [
-  {path: '', component: HomeOneComponent},
-  {path: 'home-two', component: HomeTwoComponent},
+  {path: '', component: HomeTwoComponent},
+  {path: 'home-two', component: HomeOneComponent},
   {path: 'home-three', component: HomeThreeComponent},
   {path: 'about-us', component: AboutUsComponent},
   {path: 'our-team', component: OurTeamComponent},

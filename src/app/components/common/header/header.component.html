@@ -2,7 +2,7 @@
 <div class="header center sticky-autohide" [class.transparent-light]="isTransparent">
   <div class="container">
     <div class="header-logo">
-      <h3 class="uppercase letter-spacing-1">
+      <h3 class="letter-spacing-1">
         <a routerLink="/">deidlab</a>
       </h3>
     </div>
@@ -10,69 +10,16 @@
     <!-- Menu -->
     <div class="header-menu" [ngClass]="{ 'show': isMenuOpen }">
       <ul class="nav">
-        <!-- Dropdown Item -->
-        <li class="nav-item">
-          <a class="nav-link" [ngClass]="{ 'd-toggle': true }" href="javascript:void(0)" (click)="toggleDropdown(0)">Home</a>
-          <ul class="nav-dropdown" [ngClass]="{ 'show': isMenuOpen && activeDropdown === 0 }">
-            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/">Creative Agency</a></li>
-            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/home-two">Digital Studio</a></li>
-            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/home-three">Corporate Business</a></li>
-          </ul>
-          <!-- Toggle Link Icon -->
-          <a href="javascript:void(0)" class="nav-dropdown-toggle" [ngClass]="{ 'active': isMenuOpen && activeDropdown === 0 }" (click)="toggleDropdown(0)"></a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" [ngClass]="{ 'd-toggle': true }" href="javascript:void(0)" (click)="toggleDropdown(1)">Pages</a>
-          <ul class="nav-dropdown" [ngClass]="{ 'show': isMenuOpen && activeDropdown === 1 }">
-            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/about-us">About Us</a></li>
-            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/our-team">Our Team</a></li>
-            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/team-details">Team Details</a></li>
-            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/testimonials">Testimonials</a></li>
-            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/pricing-table">Pricing Table</a></li>
-            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/404-page">404 Error Page</a></li>
-            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/coming-soon">Coming Soon</a></li>
-          </ul>
-          <!-- Toggle Link Icon -->
-          <a href="javascript:void(0)" class="nav-dropdown-toggle" [ngClass]="{ 'active': isMenuOpen && activeDropdown === 1 }" (click)="toggleDropdown(1)"></a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" [ngClass]="{ 'd-toggle': true }" href="javascript:void(0)" (click)="toggleDropdown(2)">Services</a>
-          <ul class="nav-dropdown" [ngClass]="{ 'show': isMenuOpen && activeDropdown === 2 }">
-            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/services">Services</a></li>
-            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/service-two">Service Two</a></li>
-            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/service-three">Service Three</a></li>
-            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/service-four">Service Four</a></li>
-          </ul>
-          <!-- Toggle Link Icon -->
-          <a href="javascript:void(0)" class="nav-dropdown-toggle" [ngClass]="{ 'active': isMenuOpen && activeDropdown === 2 }" (click)="toggleDropdown(2)"></a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" [ngClass]="{ 'd-toggle': true }" href="javascript:void(0)" (click)="toggleDropdown(3)">Portfolio</a>
-          <ul class="nav-dropdown" [ngClass]="{ 'show': isMenuOpen && activeDropdown === 3 }">
-            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/portfolio-two-column">Portfolio Two Columns</a></li>
-            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/portfolio-three-column">Portfolio Three Columns</a></li>
-            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/portfolio-four-column">Portfolio Four Columns</a></li>
-            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/portfolio-detail">Portfolio Details</a></li>
-          </ul>
-          <!-- Toggle Link Icon -->
-          <a href="javascript:void(0)" class="nav-dropdown-toggle" [ngClass]="{ 'active': isMenuOpen && activeDropdown === 3 }" (click)="toggleDropdown(3)"></a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" [ngClass]="{ 'd-toggle': true }" href="javascript:void(0)" (click)="toggleDropdown(4)">Blogs</a>
-          <ul class="nav-dropdown" [ngClass]="{ 'show': isMenuOpen && activeDropdown === 4 }">
-            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/blog-grid">Blog Grid</a></li>
-            <li class="nav-dropdown-item"><a class="nav-dropdown-link" routerLink="/blog-standard">Blog Standard</a></li>
-          </ul>
-          <!-- Toggle Link Icon -->
-          <a href="javascript:void(0)" class="nav-dropdown-toggle" [ngClass]="{ 'active': isMenuOpen && activeDropdown === 4 }" (click)="toggleDropdown(4)"></a>
+        <li class="nav-item" (click)="closeMenu()">
+          <a class="nav-link" routerLink="/about-us">Chi siamo</a>
         </li>
 
         <li class="nav-item" (click)="closeMenu()">
-          <a class="nav-link" routerLink="/contact">Contact Us</a>
+          <a class="nav-link" routerLink="/blog-standard">Blog</a>
+        </li>
+
+        <li class="nav-item" (click)="closeMenu()">
+          <a class="nav-link" routerLink="/contact">Contatti</a>
         </li>
       </ul>
     </div>
@@ -80,8 +27,8 @@
     <!-- Social Icons -->
     <div class="header-menu-extra">
       <ul class="list-inline-sm">
-        <li><a href="/"><i class="bi bi-facebook"></i></a></li>
-        <li><a href="/"><i class="bi bi-twitter-x"></i></a></li>
+        <!-- <li><a href="/"><i class="bi bi-facebook"></i></a></li> -->
+        <!-- <li><a href="/"><i class="bi bi-twitter-x"></i></a></li> -->
         <li><a href="/"><i class="bi bi-linkedin"></i></a></li>
       </ul>
     </div>

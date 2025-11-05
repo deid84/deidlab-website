@@ -7,23 +7,11 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
   socialLinks = [
-    { icon: 'bi bi-facebook'},
-    { icon: 'bi bi-twitter-x'},
-    { icon: 'bi bi-linkedin'},
-    { icon: 'bi bi-instagram'}
+    // { icon: 'bi-facebook', class: 'button-circle-social-facebook'},
+    // { icon: 'bi-twitter-x', class: 'button-circle-social-twitter'},
+    { icon: 'bi-linkedin', class: 'button-circle-social-linkedin'},
+    // { icon: 'bi-instagram', class: 'button-circle-social-instagram'},
   ];
 
-  footerMenu1 = [
-    { label: 'About Us', url: '/about-us' },
-    { label: 'Our Team', url: '/our-team' },
-    { label: 'Our Services', url: '/services' },
-    { label: 'Coming Soon', url: '/coming-soon' },
-    { label: 'Error Page', url: '/404-page' }
-  ];
-
-  footerMenu2 = [
-    { label: 'Creative Agency', url: '/' },
-    { label: 'Digital Studio', url: '/home-two' },
-    { label: 'Corporate Business', url: '/home-three' }
-  ];
+  year: number = new Date().getFullYear();
 }
